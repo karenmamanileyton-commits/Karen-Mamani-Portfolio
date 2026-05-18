@@ -23,6 +23,8 @@ hr {
   width: 100px;
   margin-bottom: 40px;
 }
+.sas {color: #1a1a1a;}
+
 .title {
   color: #1a1a1a;
   font-size: 60px;
@@ -392,7 +394,7 @@ hr {
   text-decoration: none;
 }
 .tm-social .media .fa {
-  background: #ffffff;
+  background: #8A3C00;
   border-radius: 2px;
   color: #444444;
   font-size: 30px;
@@ -431,7 +433,7 @@ hr {
   height: 24px;
 }
 .tm-contact {
-  background: #FDF6F0;
+  background: #dbb59f;
   padding-top: 80px;
   padding-bottom: 60px;
 }
