@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="Karen Mamani Leyton, marketing digital, webmarketing, portfolio">
+	<meta name="description" content="Portfolio de Karen Mamani Leyton - Marketing Digital & Design UI">
+	<title>Karen Mamani Leyton — Portfolio</title>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/templatemo-style.css">
+	<link href='//fonts.googleapis.com/css?family=Raleway:400,300,600,700' rel='stylesheet' type='text/css'>
+
+	<style>
+		/* Grilles responsive */
+		.portfolio-flex-grid {
+			display: flex;
+			justify-content: center;
+			gap: 16px;
+			flex-wrap: wrap;
+		}
+		.portfolio-flex-item {
+			width: 22%;
+			min-width: 160px;
+			display: flex;
+			flex-direction: column;
+			background: #fafafa;
+			border-radius: 12px;
+			overflow: hidden;
+			box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+		}
+		.posts-grid {
+			display: flex;
+			justify-content: center;
+			gap: 25px;
+			flex-wrap: wrap;
+			margin-top: 20px;
+		}
+		.post-item {
+			text-align: center;
+			width: 200px;
+		}
+		.mockup-grid {
+			display: flex;
+			justify-content: center;
+			gap: 20px;
+			flex-wrap: wrap;
+		}
+		.mockup-grid > div {
+			width: 22%;
+			min-width: 180px;
+			text-align: center;
+		}
+		.logo-grid {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 30px;
+			flex-wrap: wrap;
+			padding: 20px;
+		}
+		.divers-grid {
+			display: flex;
+			justify-content: center;
+			gap: 60px;
+			flex-wrap: wrap;
+			padding-bottom: 60px;
+		}
+		.divers-grid > div {
+			width: 280px;
+			text-align: left;
+		}
+		.beatmaker-grid {
+			display: flex;
+			justify-content: center;
+			gap: 20px;
+			flex-wrap: wrap;
+		}
+		.beatmaker-grid > div {
+			width: 30%;
+			min-width: 180px;
+			text-align: center;
+		}
+
+		/* Indicateur cliquable */
+		.clickable-hint {
+			display: inline-block;
+			margin-top: 6px;
+			font-size: 0.75em;
+			color: #C4622D;
+			letter-spacing: 0.5px;
+		}
+		.clickable-hint i {
+			margin-right: 4px;
+		}
+
+		/* Overlay hover sur images cliquables */
+		.click-wrap {
+			position: relative;
+			display: block;
+			cursor: pointer;
+		}
+		.click-overlay {
+			position: absolute;
+			inset: 0;
+			background: rgba(196, 98, 45, 0.12);
+			border-radius: inherit;
+			opacity: 0;
+			transition: opacity 0.3s;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		.click-wrap:hover .click-overlay {
+			opacity: 1;
+		}
+		.click-overlay i {
+			color: white;
+			font-size: 28px;
+			background: rgba(196,98,45,0.85);
+			border-radius: 50%;
+			width: 52px;
+			height: 52px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		/* Grille photo Pinterest */
+		.photo-masonry {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 12px;
+			padding: 0 20px 60px 20px;
+			max-width: 1100px;
+			margin: 0 auto;
+		}
+		.photo-masonry .photo-item {
+			break-inside: avoid;
+		}
+		.photo-masonry .photo-item img {
+			width: 100%;
+			border-radius: 10px;
+			display: block;
+		}
+
+		/* Responsive mobile */
+		@media screen and (max-width: 767px) {
+			.templatemo-home { height: auto; padding: 80px 20px 60px; }
+			.tm-Accueil-title { font-size: 24px !important; }
+			.title { font-size: 36px; }
+			.portfolio-flex-item { width: 45%; min-width: 140px; }
+			.post-item { width: 45%; }
+			.mockup-grid > div { width: 45%; min-width: 140px; }
+			.divers-grid > div { width: 90%; }
+			.beatmaker-grid > div { width: 90%; min-width: unset; }
+			.logo-grid > div { width: 90%; }
+			.divers-grid { gap: 30px; }
+			.photo-masonry { grid-template-columns: repeat(2, 1fr); }
+		}
+		@media screen and (max-width: 480px) {
+			.portfolio-flex-item { width: 90%; }
+			.post-item { width: 90%; }
+			.mockup-grid > div { width: 90%; }
+			.photo-masonry { grid-template-columns: 1fr; }
+		}
+	</style>
+</head>
+<body data-spy="scroll" data-target="#rock-navigation">
+
+	<!-- NAVIGATION -->
+	<div class="navbar navbar-default bs-dos-nav navbar-fixed-top sticky-navigation" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button class="navbar-toggle" data-toggle="collapse" data-target="#rock-navigation">
+					<span class="icon icon-bar"></span>
+					<span class="icon icon-bar"></span>
+					<span class="icon icon-bar"></span>
+				</button>
+				<a href="#" class="navbar-brand">Karen M.L.</a>
+			</div>
+			<nav class="collapse navbar-collapse" id="rock-navigation">
+				<ul class="nav navbar-nav navbar-right main-navigation text-uppercase">
+					<li><a href="#Accueil" class="smoothScroll">Accueil</a></li>
+					<li><a href="#work" class="smoothScroll">Compétences</a></li>
+					<li><a href="#portfolio" class="smoothScroll">Mes Créations</a></li>
+					<li><a href="#contact" class="smoothScroll">Contact</a></li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+
+	<!-- ACCUEIL -->
+	<section id="Accueil" class="templatemo-home">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-2 col-sm-1"></div>
+				<div class="col-md-8 col-sm-10">
+					<div style="text-align:center; margin-bottom:20px;">
+						<img src="images/ma-photo-final.png" alt="Karen Mamani Leyton"
+							style="width:150px; height:150px; border-radius:50%; object-fit:cover;">
+					</div>
+					<h1 class="tm-Accueil-title"><strong>Karen Mamani Leyton</strong></h1>
+					<p>Passionnée par le marketing digital et la création de contenus, je combine un parcours en commerce international (avec un semestre au Chili !) et une formation en design UI. Bientôt en Mastère Expert Webmarketing, je crée des visuels et des stratégies qui donnent envie de cliquer et je recherche une alternance dès septembre 2026 !</p>
+					<a href="#work" class="btn btn-default smoothScroll tm-view-more-btn">Commençons</a>
+				</div>
+				<div class="col-md-2 col-sm-1"></div>
+			</div>
+		</div>
+	</section>
+
+	<!-- COMPÉTENCES -->
+	<section id="work" class="tm-padding-top-bottom-100">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-offset-1 col-md-11">
+					<h2 class="title">Mes compétences</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-offset-1 col-md-10">
+					<div class="row">
+						<div class="col-md-4 col-sm-4 col-xs-6"><div class="skill-logo-box"><img src="images/Logo et certificats portfolio/Canva-icon.png" alt="Canva"><span>Canva</span></div></div>
+						<div class="col-md-4 col-sm-4 col-xs-6"><div class="skill-logo-box"><img src="images/Logo et certificats portfolio/analytics.png" alt="Google Analytics"><span>Google Analytics</span></div></div>
+						<div class="col-md-4 col-sm-4 col-xs-6"><div class="skill-logo-box"><img src="images/Logo et certificats portfolio/OIP.jpg" alt="Wordpress"><span>Wordpress</span></div></div>
+						<div class="col-md-4 col-sm-4 col-xs-6"><div class="skill-logo-box"><img src="images/premiere pro.png" alt="Adobe Première Pro"><span>Adobe Première Pro</span></div></div>
+						<div class="col-md-4 col-sm-4 col-xs-6"><div class="skill-logo-box"><img src="images/logo photoshop.png" alt="Adobe Photoshop"><span>Adobe Photoshop</span></div></div>
+						<div class="col-md-4 col-sm-4 col-xs-6"><div class="skill-logo-box"><img src="images/logo illustrator.png" alt="Adobe Illustrator"><span>Adobe Illustrator</span></div></div>
+						<div class="col-md-4 col-sm-4 col-xs-6"><div class="skill-logo-box"><img src="images/Logo et certificats portfolio/excel.jpg" alt="Excel"><span>Excel</span></div></div>
+						<div class="col-md-4 col-sm-4 col-xs-6"><div class="skill-logo-box"><img src="images/Logo et certificats portfolio/figma.png" alt="Figma"><span>Figma</span></div></div>
+						<div class="col-md-4 col-sm-4 col-xs-6"><div class="skill-logo-box"><img src="images/Logo et certificats portfolio/html.jpg" alt="Html"><span>Html</span></div></div>
+					</div>
+				</div>
+			</div>
+			<div class="row" style="margin-top:40px;">
+				<div class="col-md-offset-1 col-md-5 col-sm-6"><div class="certificat-box"><img src="images/Logo et certificats portfolio/1 opquast.png" alt="Certificat Opquast"></div></div>
+				<div class="col-md-5 col-sm-6"><div class="certificat-box"><img src="images/Logo et certificats portfolio/2 semrush.png" alt="Certificat Semrush"></div></div>
+			</div>
+		</div>
+	</section>
+
+	<!-- PORTFOLIO -->
+	<section id="portfolio" class="tm-portfolio">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="title">
+						<h2 class="tm-portfolio-title">Mes <strong>Créations</strong></h2>
+					</div>
+
+					<div class="iso-section">
+						<ul class="filter-wrapper clearfix">
+							<li><a href="#" class="opc-main-bg selected" data-filter=".Instagram">Coutumons - Instagram</a></li>
+							<li><a href="#" class="opc-main-bg" data-filter=".html">Sterna - E-commerce</a></li>
+							<li><a href="#" class="opc-main-bg" data-filter=".photoshop">Beatmakoeur - Blog musical</a></li>
+							<li><a href="#" class="opc-main-bg" data-filter=".Divers">Divers - Clients</a></li>
+							<li><a href="#" class="opc-main-bg" data-filter=".photographie">Photographie</a></li>
+						</ul>
+
+						<div class="iso-box-section">
+							<div class="iso-box-wrapper col4-iso-box">
+
+								<!-- ===== COUTUMONS ===== -->
+								<div class="iso-box Instagram col-md-12 col-sm-12 col-xs-12">
+									<div style="text-align:center; padding:30px 20px;">
+										<hr style="max-width:600px; margin:20px auto;">
+										<h2 style="font-size:2em; font-weight:300;">Coutumons est un compte Instagram éducatif</h2>
+										<hr style="max-width:600px; margin:0 auto 30px auto; border-top:1px solid #ccc;">
+										<p style="max-width:650px; margin:0 auto 40px auto; color:#888; font-size:0.95em; line-height:1.8;">Depuis 2026.</p>
+										<hr style="max-width:600px; margin:0 auto 30px auto; border-top:1px solid #ccc;">
+										<p style="max-width:650px; margin:0 auto 40px auto; color:#888; font-size:0.95em; line-height:1.8;">
+											Création et développement du compte Instagram Coutumons, un projet personnel centré sur l'histoire, les traditions et les anecdotes culturelles.
+											J'ai conçu l'identité visuelle complète du compte : logo, charte graphique, direction artistique et stratégie éditoriale.
+											Je réalise également les posts et carrousels Instagram afin de créer un univers immersif, cohérent et engageant.
+										</p>
+
+										<div style="display:inline-block; background:#f9f9f9; border-radius:16px; padding:40px 60px; box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+											<img src="images/logo coutumon.png" alt="Logo Coutumons" style="max-width:300px; width:100%;">
+										</div>
+										<p style="margin-top:20px; color:#888; font-size:0.9em; letter-spacing:1px; text-transform:uppercase;">Identité visuelle — Coutumons</p>
+
+										<div style="margin-top:30px;">
+											<h3 style="font-weight:400; font-size:1.3em; letter-spacing:2px; text-transform:uppercase; color:#333; margin-bottom:10px;">Direction éditoriale & cohérence visuelle</h3>
+											<div style="width:40px; height:2px; background:#333; margin:0 auto 20px auto;"></div>
+										</div>
+
+										<div style="max-width:960px; margin:0 auto;">
+											<div class="portfolio-flex-grid">
+												<div class="portfolio-flex-item">
+													<img src="images/inspirations-3.png" style="width:100%; height:280px; object-fit:contain; background:#f0f0f0; padding:10px;" alt="Inspirations">
+													<div style="padding:14px; text-align:center;">
+														<p style="color:#333; font-size:0.78em; font-weight:600; text-transform:uppercase; letter-spacing:1px; margin-bottom:4px;">Inspirations</p>
+														<p style="color:#aaa; font-size:0.78em; line-height:1.5; margin:0;">Une esthétique sombre, historique et éducative.</p>
+													</div>
+												</div>
+												<div class="portfolio-flex-item">
+													<img src="images/inspirations-4.png" style="width:100%; height:280px; object-fit:contain; background:#f0f0f0; padding:10px;" alt="Charte graphique">
+													<div style="padding:14px; text-align:center;">
+														<p style="color:#333; font-size:0.78em; font-weight:600; text-transform:uppercase; letter-spacing:1px; margin-bottom:4px;">Charte graphique</p>
+														<p style="color:#aaa; font-size:0.78em; line-height:1.5; margin:0;">Contrastes marqués, palette limitée et typographies fortes.</p>
+													</div>
+												</div>
+												<div class="portfolio-flex-item">
+													<img src="images/grille avant.png" style="width:100%; height:280px; object-fit:contain; background:#f0f0f0; padding:10px;" alt="Grille avant">
+													<div style="padding:14px; text-align:center;">
+														<p style="color:#333; font-size:0.78em; font-weight:600; text-transform:uppercase; letter-spacing:1px; margin-bottom:4px;">Grille éditoriale</p>
+														<p style="color:#aaa; font-size:0.78em; line-height:1.5; margin:0;">Alternance de contenus pour un rythme visuel identifiable.</p>
+													</div>
+												</div>
+												<div class="portfolio-flex-item">
+													<img src="images/grille après.png" style="width:100%; height:280px; object-fit:contain; background:#f0f0f0; padding:10px;" alt="Feed Instagram">
+													<div style="padding:14px; text-align:center;">
+														<p style="color:#333; font-size:0.78em; font-weight:600; text-transform:uppercase; letter-spacing:1px; margin-bottom:4px;">Feed final</p>
+														<p style="color:#aaa; font-size:0.78em; line-height:1.5; margin:0;">Cohérence parfaite entre couleurs, typographies et mises en page.</p>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<!-- Posts Instagram -->
+										<div style="margin-top:40px;">
+											<hr style="max-width:600px; margin:0 auto 30px auto; border-top:1px solid #ccc;">
+											<h3 style="font-weight:300; font-size:1.5em; letter-spacing:1px; margin-bottom:10px;">Exemples de posts Instagram</h3>
+											<p style="color:#aaa; font-size:0.85em; letter-spacing:1px; margin-bottom:30px;">
+												<i class="fa fa-mouse-pointer"></i> Cliquez sur un post pour voir le carrousel complet
+											</p>
+										</div>
+
+										<div class="posts-grid">
+											<div class="post-item">
+												<a class="click-wrap" data-fancybox="galerie-coutumons-1" href="images/Logo et certificats portfolio/Mockup portable/post thé.webp">
+													<img src="images/Logo et certificats portfolio/Mockup portable/post thé.webp" style="width:100%; border-radius:16px; box-shadow:0 6px 20px rgba(0,0,0,0.15);" alt="Post thé">
+													<div class="click-overlay"><i class="fa fa-expand"></i></div>
+												</a>
+												<a data-fancybox="galerie-coutumons-1" href="images/thé/1.png"style="display:none;"></a>
+												<a data-fancybox="galerie-coutumons-1" href="images/thé/2.png" style="display:none;"></a>
+                                                <a data-fancybox="galerie-coutumons-1" href="images/thé/3.png" style="display:none;"></a>
+                                                 <a data-fancybox="galerie-coutumons-1" href="images/thé/4.png" style="display:none;"></a>
+                                                <a data-fancybox="galerie-coutumons-1" href="images/thé/5.png" style="display:none;"></a>
+												<p style="color:#888; font-size:0.8em; margin-top:8px;">Le thé du soir</p>
+											</div>
+
+											<div class="post-item">
+												<a class="click-wrap" data-fancybox="galerie-coutumons-2" href="images/Logo et certificats portfolio/Mockup portable/post fourchette.webp">
+													<img src="images/Logo et certificats portfolio/Mockup portable/post fourchette.webp" style="width:100%; border-radius:16px; box-shadow:0 6px 20px rgba(0,0,0,0.15);" alt="Post fourchette">
+													<div class="click-overlay"><i class="fa fa-expand"></i></div>
+												</a>
+												<a data-fancybox="galerie-coutumons-2" href="images/Post Fourchette Coutumons Vdef/1.png" style="display:none;"></a>
+												<a data-fancybox="galerie-coutumons-2" href="images/Post Fourchette Coutumons Vdef/2.png" style="display:none;"></a>
+												<a data-fancybox="galerie-coutumons-2" href="images/Post Fourchette Coutumons Vdef/3.png" style="display:none;"></a>
+												<a data-fancybox="galerie-coutumons-2" href="images/Post Fourchette Coutumons Vdef/4.png" style="display:none;"></a>
+												<p style="color:#888; font-size:0.8em; margin-top:8px;">La fourchette</p>
+											</div>
+
+											<div class="post-item">
+												<a class="click-wrap" data-fancybox="galerie-mythes" href="images/Logo et certificats portfolio/Mockup portable/post mythes 1.webp">
+													<img src="images/Logo et certificats portfolio/Mockup portable/post mythes 1.webp" style="width:100%; border-radius:16px; box-shadow:0 6px 20px rgba(0,0,0,0.15);" alt="Post mythes">
+													<div class="click-overlay"><i class="fa fa-expand"></i></div>
+                                                <a data-fancybox="galerie-mythes" href="images/Mythe ou réel 1/1.png" style="display:none;"></a>
+                                                <a data-fancybox="galerie-mythes" href="images/Mythe ou réel 1/2.png" style="display:none;"></a>
+                                                <a data-fancybox="galerie-mythes" href="images/Mythe ou réel 1/3.png" style="display:none;"></a>
+                                                <a data-fancybox="galerie-mythes" href="images/Mythe ou réel 1/4.png" style="display:none;"></a>
+                                                 <a data-fancybox="galerie-mythes" href="images/Mythe ou réel 1/5.png" style="display:none;"></a>
+                                                <a data-fancybox="galerie-mythes" href="images/Mythe ou réel 1/6.png" style="display:none;"></a>
+
+
+
+
+
+
+
+												<p style="color:#888; font-size:0.8em; margin-top:8px;">Mythe ou réel ?</p>
+											</div>
+
+											<div class="post-item">
+												<a class="click-wrap" data-fancybox="galerie-coutumons-4" href="images/Logo et certificats portfolio/Mockup portable/post trinque.webp">
+													<img src="images/Logo et certificats portfolio/Mockup portable/post trinque.webp" style="width:100%; border-radius:16px; box-shadow:0 6px 20px rgba(0,0,0,0.15);" alt="Post trinque">
+													<div class="click-overlay"><i class="fa fa-expand"></i></div>
+												</a>
+												<a data-fancybox="galerie-coutumons-4" href="images/Post Trinquage Coutumons Vdef/1.png" style="display:none;"></a>
+												<a data-fancybox="galerie-coutumons-4" href="images/Post Trinquage Coutumons Vdef/2.png" style="display:none;"></a>
+                                                <a data-fancybox="galerie-coutumons-4" href="images/Post Trinquage Coutumons Vdef/3.png" style="display:none;"></a>
+
+												<p style="color:#888; font-size:0.8em; margin-top:8px;">Trinquer</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- FIN COUTUMONS -->
+
+								<!-- ===== STERNA ===== -->
+								<div class="iso-box html col-md-12 col-sm-12 col-xs-12">
+									<div style="text-align:center; padding:30px 20px 0 20px;">
+										<hr style="max-width:600px; margin:20px auto;">
+										<h2 style="font-size:2em; font-weight:300;">Sterna — Projet e-commerce éco-responsable</h2>
+										<hr style="max-width:600px; margin:0 auto 30px auto; border-top:1px solid #ccc;">
+										<p style="max-width:650px; margin:0 auto 40px auto; color:#888; font-size:0.95em; line-height:1.8;">Depuis 2026.</p>
+										<hr style="max-width:600px; margin:20px auto 30px auto; border-top:1px solid #ccc;">
+										<p style="max-width:650px; margin:0 auto 40px auto; color:#888; font-size:0.95em; line-height:1.8;">
+											Création de l'identité visuelle complète de Sterna, un projet e-commerce autour de produits éco-responsables.
+											Réalisation du logo, de la charte graphique, du moodboard ainsi que des maquettes UI sur Figma.
+											L'objectif était de développer une image de marque moderne, minimaliste et alignée avec les valeurs écologiques du projet.
+										</p>
+									</div>
+
+									<div class="logo-grid">
+										<div style="text-align:center;">
+											<div style="background:#f9f9f9; border-radius:16px; padding:30px 40px; box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+												<img src="images/1er logo couleur garamont.png" alt="Logo Sterna" style="max-width:220px; width:100%;">
+											</div>
+											<p style="margin-top:10px; color:#888; font-size:0.8em; letter-spacing:1px; text-transform:uppercase;">Logo principal</p>
+										</div>
+										<div style="text-align:center;">
+											<div style="background:#f9f9f9; border-radius:16px; padding:30px 40px; box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+												<img src="images/sterna 1 fond blanc Garamont.png" alt="Déclinaison 1" style="max-width:220px; width:100%;">
+											</div>
+											<p style="margin-top:10px; color:#888; font-size:0.8em; letter-spacing:1px; text-transform:uppercase;">Version noir</p>
+										</div>
+										<div style="text-align:center;">
+											<div style="background:#030303; border-radius:16px; padding:30px 40px; box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+												<img src="images/sterna blanc final garamond.png" alt="Déclinaison 2" style="max-width:220px; width:100%;">
+											</div>
+											<p style="margin-top:10px; color:#888; font-size:0.8em; letter-spacing:1px; text-transform:uppercase;">Version blanc</p>
+										</div>
+									</div>
+
+									<div style="text-align:center; margin-top:50px;">
+										<hr style="max-width:600px; margin:0 auto 20px auto; border-top:1px solid #ccc;">
+										<h3 style="font-weight:300; font-size:1.4em; letter-spacing:1px; margin-bottom:30px;">Charte graphique</h3>
+									</div>
+									<div style="padding:0 20px 40px 20px; text-align:center;">
+										<a class="click-wrap" style="display:inline-block; width:90%; max-width:700px;" data-fancybox="charte-sterna" href="images/charte sterna.jpg">
+											<img src="images/charte sterna.jpg" alt="Charte graphique Sterna" style="width:100%; border-radius:12px; box-shadow:0 4px 20px rgba(0,0,0,0.10);">
+											<div class="click-overlay" style="border-radius:12px;"><i class="fa fa-search-plus"></i></div>
+										</a>
+									</div>
+
+									<div style="text-align:center; margin-top:30px;">
+										<hr style="max-width:600px; margin:0 auto 20px auto; border-top:1px solid #ccc;">
+										<h3 style="font-weight:300; font-size:1.4em; letter-spacing:1px; margin-bottom:30px;">Moodboard</h3>
+									</div>
+									<div style="padding:0 20px 40px 20px; text-align:center;">
+										<a class="click-wrap" style="display:inline-block; width:90%; max-width:700px;" data-fancybox="moodboard-sterna" href="images/Moodboard.png">
+											<img src="images/Moodboard.png" alt="Moodboard Sterna" style="width:100%; border-radius:12px; box-shadow:0 4px 20px rgba(0,0,0,0.10);">
+											<div class="click-overlay" style="border-radius:12px;"><i class="fa fa-search-plus"></i></div>
+										</a>
+									</div>
+
+									<div style="text-align:center; margin-top:30px;">
+										<hr style="max-width:600px; margin:0 auto 20px auto; border-top:1px solid #ccc;">
+										<h3 style="font-weight:300; font-size:1.4em; letter-spacing:1px; margin-bottom:30px;">Maquettes Figma</h3>
+									</div>
+									<div class="mockup-grid" style="padding:0 20px 40px 20px; align-items:flex-start;">
+										<div>
+											<a class="click-wrap" data-fancybox="maquettes-sterna" href="images/Maquette 1 Figma.mp4" data-type="video">
+												<img src="images/1 Portable figma.png" alt="Maquette Figma 1" style="width:100%; height:500px; object-fit:cover; object-position:top; border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.10);">
+												<div class="click-overlay" style="border-radius:10px;"><i class="fa fa-play"></i></div>
+											</a>
+											<p style="color:#888; font-size:0.8em; margin-top:8px;">Page Accueil</p>
+										</div>
+										<div>
+											<a class="click-wrap" data-fancybox="maquettes-sterna" href="images/Maquette 2 video.mp4" data-type="video">
+												<img src="images/2 portable figma.png" alt="Maquette Figma 2" style="width:100%; height:500px; object-fit:cover; object-position:top; border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.10);">
+												<div class="click-overlay" style="border-radius:10px;"><i class="fa fa-play"></i></div>
+											</a>
+											<p style="color:#888; font-size:0.8em; margin-top:8px;">Page À propos</p>
+										</div>
+										<div>
+											<a class="click-wrap" data-fancybox="maquettes-sterna" href="images/Maquette 3 video.mp4" data-type="video">
+												<img src="images/3 portable figma.png" alt="Maquette Figma 3" style="width:100%; height:500px; object-fit:cover; object-position:top; border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.10);">
+												<div class="click-overlay" style="border-radius:10px;"><i class="fa fa-play"></i></div>
+											</a>
+											<p style="color:#888; font-size:0.8em; margin-top:8px;">Page Produits</p>
+										</div>
+										<div>
+											<a class="click-wrap" data-fancybox="maquettes-sterna" href="images/Maquette 4.png">
+												<img src="images/4 portable figma.png" alt="Maquette Figma 4" style="width:100%; height:500px; object-fit:cover; object-position:top; border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.10);">
+												<div class="click-overlay" style="border-radius:10px;"><i class="fa fa-search-plus"></i></div>
+											</a>
+											<p style="color:#888; font-size:0.8em; margin-top:8px;">Page Description produit</p>
+										</div>
+									</div>
+
+									<div style="text-align:center; margin-top:30px;">
+										<hr style="max-width:600px; margin:0 auto 20px auto; border-top:1px solid #ccc;">
+										<h3 style="font-weight:300; font-size:1.4em; letter-spacing:1px; margin-bottom:30px;">Mockups</h3>
+									</div>
+									<div class="mockup-grid" style="padding:0 20px 60px 20px;">
+										<div>
+											<a class="click-wrap" data-fancybox="mockups-sterna" href="images/mockup sac en jute.png">
+												<img src="images/mockup sac en jute.png" alt="Mockup 1" style="width:100%; height:250px; object-fit:cover; border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.10);">
+												<div class="click-overlay" style="border-radius:10px;"><i class="fa fa-search-plus"></i></div>
+											</a>
+											<p style="color:#888; font-size:0.8em; margin-top:8px;">Mockup sac en jute</p>
+										</div>
+										<div>
+											<a class="click-wrap" data-fancybox="mockups-sterna" href="images/Mockup sac en coton.png">
+												<img src="images/Mockup sac en coton.png" alt="Mockup 2" style="width:100%; height:250px; object-fit:cover; border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.10);">
+												<div class="click-overlay" style="border-radius:10px;"><i class="fa fa-search-plus"></i></div>
+											</a>
+											<p style="color:#888; font-size:0.8em; margin-top:8px;">Mockup sac en coton</p>
+										</div>
+										<div>
+											<a class="click-wrap" data-fancybox="mockups-sterna" href="images/emballage.png">
+												<img src="images/emballage.png" alt="Mockup 3" style="width:100%; height:250px; object-fit:cover; border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.10);">
+												<div class="click-overlay" style="border-radius:10px;"><i class="fa fa-search-plus"></i></div>
+											</a>
+											<p style="color:#888; font-size:0.8em; margin-top:8px;">Mockup emballage</p>
+										</div>
+										<div>
+											<a class="click-wrap" data-fancybox="mockups-sterna" href="images/mockup savon.png">
+												<img src="images/mockup savon.png" alt="Mockup 4" style="width:100%; height:250px; object-fit:cover; border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.10);">
+												<div class="click-overlay" style="border-radius:10px;"><i class="fa fa-search-plus"></i></div>
+											</a>
+											<p style="color:#888; font-size:0.8em; margin-top:8px;">Mockup savon</p>
+										</div>
+									</div>
+								</div>
+								<!-- FIN STERNA -->
+
+								<!-- ===== DIVERS ===== -->
+								<div class="iso-box Divers col-md-12 col-sm-12 col-xs-12">
+									<div style="text-align:center; padding:30px 20px;">
+										<hr style="max-width:600px; margin:20px auto;">
+										<h2 style="font-size:2em; font-weight:300;">Créations pour d'autres clients</h2>
+										<hr style="max-width:600px; margin:0 auto 30px auto; border-top:1px solid #ccc;">
+										<p style="max-width:650px; margin:0 auto 40px auto; color:#888; font-size:0.95em; line-height:1.8;">
+											Sélection de posts et carrousels Instagram réalisés pour différents clients : événementiel et bien-être.
+										</p>
+									</div>
+									<div class="divers-grid">
+										<div>
+											<a class="click-wrap" data-fancybox="galerie-divers-1" href="images/Post adrenalina series.png">
+												<img src="images/Post adrenalina series.png" style="width:100%; border-radius:16px; box-shadow:0 6px 20px rgba(0,0,0,0.15);" alt="Kumite Challenge">
+												<div class="click-overlay" style="border-radius:16px;"><i class="fa fa-expand"></i></div>
+											</a>
+											<div style="margin-top:16px; padding:16px; background:#fafafa; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.06);">
+												<p style="color:#333; font-size:0.75em; font-weight:700; text-transform:uppercase; letter-spacing:1px; margin-bottom:10px;">Kumite Challenge</p>
+												<p style="color:#888; font-size:0.82em; line-height:1.6; margin-bottom:6px;"><strong style="color:#555;">Client :</strong> Adrenalina series, organisateur d'événements sportifs.</p>
+												<p style="color:#888; font-size:0.82em; line-height:1.6; margin-bottom:6px;"><strong style="color:#555;">Objectif :</strong> Recruter 4 athlètes et générer de la visibilité</p>
+												<p style="color:#888; font-size:0.82em; line-height:1.6; margin-bottom:6px;"><strong style="color:#555;">Date :</strong> 2026</p>
+											</div>
+										</div>
+										<div>
+											<a class="click-wrap" data-fancybox="galerie-divers-2" href="images/1.png">
+												<img src="images/1.png" style="width:100%; border-radius:16px; box-shadow:0 6px 20px rgba(0,0,0,0.15);" alt="AMÚN post 1">
+												<div class="click-overlay" style="border-radius:16px;"><i class="fa fa-expand"></i></div>
+												<div style="position:absolute; top:10px; left:10px; background:rgba(0,0,0,0.6); border-radius:20px; padding:4px 10px;">
+													<span style="color:white; font-size:0.75em;"><i class="fa fa-clone"></i> 6 slides</span>
+												</div>
+											</a>
+											<a data-fancybox="galerie-divers-2" href="images/2.png" style="display:none;"></a>
+											<a data-fancybox="galerie-divers-2" href="images/3.png" style="display:none;"></a>
+											<a data-fancybox="galerie-divers-2" href="images/4.png" style="display:none;"></a>
+											<a data-fancybox="galerie-divers-2" href="images/5.png" style="display:none;"></a>
+											<a data-fancybox="galerie-divers-2" href="images/6.png" style="display:none;"></a>
+											<div style="margin-top:16px; padding:16px; background:#fafafa; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.06);">
+												<p style="color:#333; font-size:0.75em; font-weight:700; text-transform:uppercase; letter-spacing:1px; margin-bottom:10px;">Carrousel AMÚN</p>
+												<p style="color:#888; font-size:0.82em; line-height:1.6; margin-bottom:6px;"><strong style="color:#555;">Client :</strong> AMÚN, centre de bien-être</p>
+												<p style="color:#888; font-size:0.82em; line-height:1.6; margin-bottom:6px;"><strong style="color:#555;">Objectif :</strong> Éduquer la communauté sur la thérapie par ventouses</p>
+												<p style="color:#888; font-size:0.82em; line-height:1.6; margin-bottom:6px;"><strong style="color:#555;">Date :</strong> 2026</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- FIN DIVERS -->
+
+								<!-- ===== BEATMAKOEUR ===== -->
+								<div class="iso-box photoshop col-md-12 col-sm-12 col-xs-12">
+									<div style="text-align:center; padding:30px 20px;">
+										<hr style="max-width:600px; margin:20px auto;">
+										<h2 style="font-size:2em; font-weight:300;">Beatmakoeur : Projet de blog musical</h2>
+										<hr style="max-width:600px; margin:0 auto 30px auto; border-top:1px solid #ccc;">
+										<p style="max-width:650px; margin:0 auto 40px auto; color:#888; font-size:0.95em; line-height:1.8;">2021</p>
+										<hr style="max-width:600px; margin:0 auto 30px auto; border-top:1px solid #ccc;">
+										<p style="max-width:650px; margin:0 auto 40px auto; color:#888; font-size:0.95em; line-height:1.8;">
+											Création d'un blog musical sur Wix dédié à l'univers du rap et aux découvertes artistiques.
+											Réalisation de l'identité visuelle du projet ainsi que de la mise en page du site afin de proposer une expérience immersive et moderne.
+											Ce projet m'a permis de développer mes compétences en création de contenu digital, design visuel et gestion d'un univers graphique cohérent.
+										</p>
+
+										<div style="display:inline-block; background:#f9f9f9; border-radius:16px; padding:40px 60px; box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+											<img src="images/logo beatmakoeur.png" alt="Logo Beatmakoeur" style="max-width:300px; width:100%;">
+										</div>
+										<p style="margin-top:20px; color:#888; font-size:0.9em; letter-spacing:1px;">Logo principal — Beatmakoeur</p>
+
+										<div style="text-align:center; margin-top:50px;">
+											<hr style="max-width:600px; margin:0 auto 20px auto; border-top:1px solid #ccc;">
+											<h3 style="font-weight:300; font-size:1.4em; letter-spacing:1px; margin-bottom:30px;">Maquettes Figma</h3>
+										</div>
+
+										<div style="padding:0 20px 40px 20px;">
+											<div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap; margin-bottom:30px;">
+												<div style="width:30%; min-width:180px; text-align:center;">
+													<a class="click-wrap" data-fancybox="maquettes-beat" href="images/beatmaker karen 1.png">
+														<img src="images/beatmaker karen 1.png" alt="Maquette 1" style="width:100%; border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.10);">
+														<div class="click-overlay" style="border-radius:10px;"><i class="fa fa-search-plus"></i></div>
+													</a>
+													<p style="color:#888; font-size:0.8em; margin-top:8px;">Maquette 1</p>
+												</div>
+												<div style="width:30%; min-width:180px; text-align:center;">
+													<a class="click-wrap" data-fancybox="maquettes-beat" href="images/beatmaker karen 2.png">
+														<img src="images/beatmaker karen 2.png" alt="Maquette 2" style="width:100%; border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.10);">
+														<div class="click-overlay" style="border-radius:10px;"><i class="fa fa-search-plus"></i></div>
+													</a>
+													<p style="color:#888; font-size:0.8em; margin-top:8px;">Maquette 2</p>
+												</div>
+											</div>
+											<div style="display:flex; justify-content:center;">
+												<div style="width:50%; min-width:180px; text-align:center;">
+													<a class="click-wrap" data-fancybox="maquettes-beat" data-type="iframe" data-src="https://beatmakoeur.wixsite.com/rapfr" href="javascript:;">
+														<img src="images/beatmaker accueil karen.png" alt="Blog Beatmakoeur" style="width:100%; border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.10);">
+														<div class="click-overlay" style="border-radius:10px;"><i class="fa fa-external-link"></i></div>
+													</a>
+													<p style="color:#888; font-size:0.8em; margin-top:8px;">Consulter le blog</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- FIN BEATMAKOEUR -->
+
+								<!-- ===== PHOTOGRAPHIE ===== -->
+								<div class="iso-box photographie col-md-12 col-sm-12 col-xs-12">
+									<div style="text-align:center; padding:30px 20px;">
+										<hr style="max-width:600px; margin:20px auto;">
+										<h2 style="font-size:2em; font-weight:300;">Photographie</h2>
+										<hr style="max-width:600px; margin:0 auto 30px auto; border-top:1px solid #ccc;">
+										<p style="max-width:650px; margin:0 auto 40px auto; color:#888; font-size:0.95em; line-height:1.8;">
+											Une sélection de photographies personnelles.
+										</p>
+									</div>
+
+									<div class="photo-masonry">
+										<div class="photo-item">
+											<a class="click-wrap" data-fancybox="galerie-photo" href="images/Photographie voyages/1.png">
+												<img src="images/Photographie voyages/1.png" alt="Photo 1">
+												<div class="click-overlay" style="border-radius:10px;"><i class="fa fa-expand"></i></div>
+											</a>
+										</div>
+										<div class="photo-item">
+											<a class="click-wrap" data-fancybox="galerie-photo" href="images/Photographie voyages/2.JPG">
+												<img src="images/Photographie voyages/2.JPG" alt="Photo 2">
+												<div class="click-overlay" style="border-radius:10px;"><i class="fa fa-expand"></i></div>
+											</a>
+										</div>
+										<div class="photo-item">
+											<a class="click-wrap" data-fancybox="galerie-photo" href="images/Photographie voyages/9.JPG">
+												<img src="images/Photographie voyages/9.JPG" alt="Photo 3">
+												<div class="click-overlay" style="border-radius:10px;"><i class="fa fa-expand"></i></div>
+											</a>
+										</div>
+										<div class="photo-item">
+											<a class="click-wrap" data-fancybox="galerie-photo" href="images/Photographie voyages/3.jpg">
+												<img src="images/Photographie voyages/3.jpg" alt="Photo 4">
+												<div class="click-overlay" style="border-radius:10px;"><i class="fa fa-expand"></i></div>
+											</a>
+										</div>
+										<div class="photo-item">
+											<a class="click-wrap" data-fancybox="galerie-photo" href="images/Photographie voyages/4.JPG">
+												<img src="images/Photographie voyages/4.JPG" alt="Photo 5">
+												<div class="click-overlay" style="border-radius:10px;"><i class="fa fa-expand"></i></div>
+											</a>
+										</div>
+										<div class="photo-item">
+											<a class="click-wrap" data-fancybox="galerie-photo" href="images/Photographie voyages/5.jpeg">
+												<img src="images/Photographie voyages/5.jpeg" alt="Photo 6">
+												<div class="click-overlay" style="border-radius:10px;"><i class="fa fa-expand"></i></div>
+											</a>
+										</div>
+										<div class="photo-item">
+											<a class="click-wrap" data-fancybox="galerie-photo" href="images/Photographie voyages/6.jpeg">
+												<img src="images/Photographie voyages/6.jpeg" alt="Photo 7">
+												<div class="click-overlay" style="border-radius:10px;"><i class="fa fa-expand"></i></div>
+											</a>
+										</div>
+										<div class="photo-item">
+											<a class="click-wrap" data-fancybox="galerie-photo" href="images/Photographie voyages/7.jpeg">
+												<img src="images/Photographie voyages/7.jpeg" alt="Photo 8">
+												<div class="click-overlay" style="border-radius:10px;"><i class="fa fa-expand"></i></div>
+											</a>
+										</div>
+										<div class="photo-item">
+											<a class="click-wrap" data-fancybox="galerie-photo" href="images/Photographie voyages/8.JPG">
+												<img src="images/Photographie voyages/8.JPG" alt="Photo 9">
+												<div class="click-overlay" style="border-radius:10px;"><i class="fa fa-expand"></i></div>
+											</a>
+										</div>
+										
+							
+									</div>
+								</div>
+								<!-- FIN PHOTOGRAPHIE -->
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- END PORTFOLIO -->
+
+	<!-- CONTACT -->
+	<section id="contact" class="tm-contact">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12" style="text-align:center;">
+					<h2 class="title">Me <strong>contacter</strong></h2>
+					<hr style="max-width:600px; margin:0 auto 40px auto;">
+					<div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap; margin-bottom:50px;">
+						<a href="https://www.linkedin.com/in/karenmamanileyton" target="_blank"
+							style="display:flex; align-items:center; gap:12px; padding:16px 32px; background:#0A66C2; color:white; border-radius:12px; text-decoration:none; font-size:1em; font-weight:600; box-shadow:0 4px 15px rgba(10,102,194,0.3); transition:transform 0.2s;"
+							onmouseover="this.style.transform='translateY(-3px)'"
+							onmouseout="this.style.transform='translateY(0)'">
+							<i class="fa fa-linkedin" style="font-size:1.4em;"></i>
+							LinkedIn
+						</a>
+						<a href="mailto:Karenmamanileyton@gmail.com"
+							style="display:flex; align-items:center; gap:12px; padding:16px 32px; background:#EA4335; color:white; border-radius:12px; text-decoration:none; font-size:1em; font-weight:600; box-shadow:0 4px 15px rgba(234,67,53,0.3); transition:transform 0.2s;"
+							onmouseover="this.style.transform='translateY(-3px)'"
+							onmouseout="this.style.transform='translateY(0)'">
+							<i class="fa fa-envelope" style="font-size:1.4em;"></i>
+							Gmail
+						</a>
+					</div>
+					<p style="color:#aaa; font-size:0.85em;">© 2026 Karen Mamani Leyton — Portfolio</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="js/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/smoothscroll.js"></script>
+	<script src="js/jquery.nav.js"></script>
+	<script src="js/isotope.js"></script>
+	<script src="js/imagesloaded.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+	<script src="js/custom.js"></script>
+
+	<!-- Correctif Isotope pour la section photographie -->
+	<script>
+		$(document).ready(function () {
+			$('.filter-wrapper a').on('click', function () {
+				setTimeout(function () {
+					$(window).trigger('resize');
+					$('.iso-box-wrapper').isotope('layout');
+				}, 150);
+			});
+		});
+	</script>
+
+</body>
+</html>
